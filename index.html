@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://www.w3.org/Tools/respec/respec-w3c" async class="remove"></script>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22105%22>🐶</text></svg>">
+    <title>Principles of User Privacy (PUP)</title>
+    <style>
+      body {
+        background: url(proposal.svg) no-repeat fixed !important;
+        background-size: 25px 380px !important;
+      }
+    </style>
+    <script class="remove">
+      var respecConfig = {
+        specStatus: 'unofficial',
+        postProcess: [(config, doc) => {
+          let time = doc.querySelector('.head h2 time')
+            , h2 = doc.querySelector('.head h2')
+          ;
+          h2.innerHTML = 'Proposal ';
+          h2.appendChild(time);
+        }],
+        editors: [{
+          name: 'Robin Berjon',
+          company: 'The New York Times',
+          companyURL: 'https://nytimes.com/',
+          url: 'https://berjon.com/',
+        }],
+        github: 'https://github.com/darobin/pup',
+        edDraftURI: 'https://darobin.github.io/pup/',
+        shortName: 'pup',
+        localBiblio: {
+          'ANTI-TRACKING-POLICY': {
+            title: 'Anti-Tracking Policy',
+            href: 'https://wiki.mozilla.org/Security/Anti_tracking_policy#Tracking_Definition',
+            publisher: 'Mozilla',
+          },
+          'BIT-BY-BIT': {
+            title: 'Bit By Bit: Social Research in the Digital Age',
+            href: 'https://www.bitbybitbook.com/',
+            authors: ['Matt Salganik'],
+            publisher: 'Princeton University Press',
+            status: 'You can read this book free of charge, but Matt is an outstanding author and I encourage you to support him by buying his book!',
+          },
+          'CONFIDING': {
+            title: 'Confiding in Con Men: U.S. Privacy Law, the GDPR, and Information Fiduciaries',
+            authors: ['Lindsey Barrett'],
+            href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3354129',
+          },
+          'EUROBAROMETER-443': {
+            title: 'Eurobarometer 443: e-Privacy',
+            authors: ['European Commission'],
+            href: 'https://ec.europa.eu/COMMFrontOffice/publicopinion/index.cfm/Survey/getSurveyDetail/instruments/FLASH/surveyKy/2124',
+          },
+          'FIP': {
+            title: 'Fair Information Practices: A Basic History',
+            href: 'http://bobgellman.com/rg-docs/rg-FIPShistory.pdf',
+            authors: ['Bob Gellman'],
+            status: '(PDF)',
+          },
+          'GDPR': {
+            title: 'General Data Protection Regulations (GDPR) / Regulation (EU) 2016/679',
+            href: 'https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679&from=EN',
+            authors: ['European Parliament and Council of European Union'],
+          },
+          'GPC': {
+            title: 'Global Privacy Control (GPC)',
+            authors: ['Robin Berjon', 'Sebastian Zimmeck', 'Ashkan Soltani', 'David Harbage', 'Peter Snyder'],
+            href: 'https://globalprivacycontrol.github.io/gpc-spec/',
+            publisher: 'W3C',
+          },
+          'NYT-PRIVACY': {
+            title: 'How The New York Times Thinks About Your Privacy',
+            author: ['Robin Berjon'],
+            href: 'https://open.nytimes.com/how-the-new-york-times-thinks-about-your-privacy-bc07d2171531',
+            publisher: 'NYT Open',
+          },
+          'PBD': {
+            title: 'Privacy by Design',
+            href: 'https://conversationalist.org/2019/09/13/feminism-explains-our-toxic-relationships-with-our-smartphones/',
+            publisher: 'Office of the Information and Privacy Commissioner, Ontario',
+          },
+          'PHONE-ON-FEMINISM': {
+            title: 'This is your phone on feminism',
+            href: 'https://conversationalist.org/2019/09/13/feminism-explains-our-toxic-relationships-with-our-smartphones/',
+            authors: ['Maria Farrell'],
+            publisher: 'The Conversationalist',
+            rawDate: '2019-09-13',
+          },
+          'PRIVACY-CONTESTED': {
+            title: 'Privacy is an essentially contested concept: a multi-dimensional analytic for mapping privacy',
+            authors: ['Deirdre K. Mulligan', 'Colin Koopman', 'Nick Doty'],
+            href: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5124066/',
+            publisher: 'Philosophical Transacions A',
+          },
+          'PRIVACY-IS-POWER': {
+            title: 'Privacy Is Power',
+            authors: ['Carissa Véliz'],
+            href: 'https://www.penguin.com.au/books/privacy-is-power-9781787634046',
+            publisher: 'Bantam Press',
+          },
+          'PRIVACY-PROJECT': {
+            title: 'The Privacy Project',
+            href: 'https://www.nytimes.com/interactive/2019/opinion/internet-privacy-project.html',
+            publisher: 'The New York Times',
+          },
+          'PRIVACY-THREAT': {
+            title: 'Target Privacy Threat Model',
+            href: 'https://w3cping.github.io/privacy-threat-model/',
+            authors: ['Jeffrey Yasskin', 'Tom Lowenthal'],
+            publisher: 'W3C PING',
+          },
+          'SURVEILLANCE-CAPITALISM': {
+            title: 'The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power',
+            authors: ['Shoshana Zuboff'],
+            href: 'https://www.publicaffairsbooks.com/titles/shoshana-zuboff/the-age-of-surveillance-capitalism/9781610395694/',
+            publisher: 'Hachette Public Affairs',
+          },
+          'TRACKING-PREVENTION-POLICY': {
+            title: 'Tracking Prevention Policy',
+            href: 'https://webkit.org/tracking-prevention-policy/',
+            publisher: 'Apple',
+          },
+          'W3C-PROCESS': {
+            title: 'W3C Process Document',
+            authors: ['Elika J. Etemad / fantasai', 'Florian Rivoal'],
+            href: 'https://www.w3.org/Consortium/Process/',
+            publisher: 'W3C',
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <section id="abstract">
+      <p>
+        Privacy is an essentially contested concept [[PRIVACY-CONTESTED]]. Its debated meaning
+        render its support problematic in the context of a standards-setting process grounded in
+        consensus [[W3C-PROCESS]], in seeking out technical solutions grounded on shared
+        requirements, and in addressing the needs of a worldwide constituency. This document
+        provides definitions for privacy and related concepts that are suitable for a global
+        audience, that can ground a methodology for privacy threat modelling, and can guide the
+        development of the Web as a trustworthy platform. In the spirit of building a much-needed
+        bridge between technology and policy, this document is written under the expectation that
+        it can apply to both.
+      </p>
+    </section>
+    <section id="sotd"></section>
+    <section>
+      <h2>Introduction</h2>
+      <p>
+        Privacy is essential to trust, and trust is a cornerstone value of the Web [[RFC8890]].
+        In much of everyday life, people have little difficulty assessing whether a given flow of
+        information constitutes a violation of privacy or not [[NYT-OPEN]]. However, in the digital
+        space, users struggle to understand how their data may flow between contexts and how such
+        flows may affect them, not just immediately but at a much later time and in completely
+        different situations. Some actors then seize upon this confusion in order to extract and
+        exploit personal data at unprecedented scale.
+      </p>
+      <p>
+        The goal of this document is to define all the terms that may prove useful in developing
+        technology and policy that relate to privacy and personal data. It additionally provides
+        several frameworks that address the common need that is privacy threat modelling, the
+        frequent debate over consent, and the under-developed set of issues in privacy that are of a
+        collective, relational nature.
+      </p>
+    </section>
+    <section>
+      <h2>Definitions</h2>
+      <p>
+        Tk
+      </p>
+      <!--
+        - notebook p.21 (2021III11)
+        - examples with Poodle (because PUP), so Poodle Naps, Poodle Fetch, PNail Salon, AIBO.
+      -->
+      <section>
+        <h2>Essentials</h2>
+        <p>
+          Tk
+        </p>
+        <!--
+          - personal data
+          - data subject
+          - deidentified data
+          - context
+          - contextual integrity (not by origin and not through the political economy, explain well)
+          - privacy
+          - privacy violation
+          - privacy labour
+          - purpose: how do we define this? based on context, it has to be, and the purpose can only
+            ever be valid *in* context
+          - vulnerable subject
+        -->
+      </section>
+      <section>
+        <h2>The Parties</h2>
+        <p>
+          Tk
+        </p>
+        <!--
+          - first party
+          - third party
+          - service provider
+          - data controller
+          - Vegas Rule
+        -->
+      </section>
+      <section>
+        <h2>User Agents</h2>
+        <p>
+          Tk
+        </p>
+        <!--
+          - user agent (distinct from the parties)
+          - fiduciary
+          - self-dealing
+          - care
+            - the difference between care and data paternalism is that the latter purports to help
+              in part by removing agency ("don't worry about it, so long as your data is with us
+              it's safe, you don't need to know what we do with it, it's all good because we're
+              good people") whereas care aims to support people by enhancing their agency and
+              sovereignty
+          - honesty
+          - loyalty
+          - protection & data protection
+        -->
+      </section>
+    </section>
+    <section>
+      <h2>Privacy Threat Model Methodology</h2>
+      <p>
+        Tk
+      </p>
+      <!--
+        - explain the difference with security: all the parties other than the user are threats,
+          including the first party (first and foremost) and the user agent
+        - defining a context
+        - respecting contextual integrity
+      -->
+    </section>
+    <section>
+      <h2>User Control and Autonomy</h2>
+      <p>
+        Tk
+      </p>
+      <!--
+        - increased choice is not increased autonomy
+          - Acquisti on influence over privacy preferences
+          - this is a good use of the Agnes Transparency & Choice meme
+        - opt in, opt out, consent: a comparison
+          - consent is bad for vulnerable subjects because it incentivises companies to NOT know
+            that a given subject is vulnerable, in order not to be liable for it
+          - outcomes versus means: increasing agency versus notice & choice
+          - consent is comparable to the general problem of permissions on the Web platform. In the
+            same way that it should be clear when a given device capability is in use (eg. you are
+            providing geolocation or camera access), sharing data should be set up in such a way
+            that it requires deliberate, specific action from the user (eg. triggering a form
+            control) and if that consent is persistent, there should be an indicator that data is
+            being transmitted shown at all times, in such a way that the user can easily swich it
+            off. In general, providing consent should be rare, difficult, highly intensional, and
+            temporary
+        - explain that there is no value in asking users about technical methods (eg. cookies) but
+          only ever about purposes
+        - the value in global opt outs
+          - rectify automation asymmetry
+          - essentially like having a robot click or convey opt out automatically for the user
+          - understanding global opt outs under consent regimes such as the GDPR
+            - the GOO essentially conveys a preference for state, not for transition, so it will
+              opt you out if you ever are opted in
+        - dark patterns
+        - tiered models by context defined in standards
+          - define legitimate interest based on CI
+      -->
+    </section>
+    <section>
+      <h2>Collective Issues in Privacy</h2>
+      <p>
+        Tk
+      </p>
+      <!--
+        - legibility
+        - second-wave colonisation
+        - data markets, differential valuation, rivalrous + non-exludable
+      -->
+    </section>
+    <section id="conformance"></section>
+  </body>
+</html>
