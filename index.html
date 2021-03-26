@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[=context=]<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -193,27 +193,27 @@
           person.
         </p>
         <p>
-          We define <dfn>personal data</dfn> as any information relating to a <a>person</a> such
+          We define <dfn>personal data</dfn> as any information relating to a [=person=] such
           that:
         </p>
         <ul>
           <li>
-            this <a>person</a> is identified, directly or indirectly, by reference to an
+            this [=person=] is identified, directly or indirectly, by reference to an
             identifier such as a name, email address, an arbitrary identifier or identification
             number, an online identifier such as an IP address or any identifier attached to a
-            device this <a>person</a> may be using, phone number, location data, or factors specific
+            device this [=person=] may be using, phone number, location data, or factors specific
             to the physical, physiological, genetic, mental, economic, cultural, or social identity
-            of that <a>person</a>, as well as identifiers derived from such data, for instance
+            of that [=person=], as well as identifiers derived from such data, for instance
             through hashing; or
           </li>
           <li>
-            this <a>person</a> could reasonably be reidentified from a conjunction of this data with
+            this [=person=] could reasonably be reidentified from a conjunction of this data with
             other data; or
           </li>
           <li>
-            the data pertains to a group of people such that a <a>person</a> may find themselves to
+            the data pertains to a group of people such that a [=person=] may find themselves to
             be the subject of a treatment related to this group, even if the entity carrying out the
-            treatment has no way to identify that <a>person</a>.
+            treatment has no way to identify that [=person=].
           </li>
         </ul>
         <p>
@@ -225,8 +225,8 @@
           <a href="#collective">Collective Issues in Privacy</a> section.
         </p>
         <p>
-          A <dfn>vulnerable person</dfn> is a <a>person</a> who, at least in the <a>context</a> of
-          the <a>processing</a> being discussed, are unable to exercise sufficient
+          A <dfn>vulnerable person</dfn> is a [=person=] who, at least in the [=context=] of
+          the [=processing=] being discussed, are unable to exercise sufficient
           self-determination for any consent they may provide to be receivable. This includes for
           example children, employees with respect to their employers, people in some situations of
           intellectual or psychological impairment, or refugees.
@@ -235,16 +235,61 @@
       <section>
         <h2>The Parties</h2>
         <p>
-          Tk
+          A <dfn>party</dfn> is a [=person=], a legal entity, or a set of legal entities that
+          share common owners, common controllers, and a group identity that is readily evident to
+          the [=user=] without them needing to consult additional material, typically through
+          common branding.
         </p>
-        <!--
-          - party
-          - first party
-          - third party
-          - service provider
-          - data controller
-          - Vegas Rule
-        -->
+        <p>
+          The <dfn data-lt="first parties">first party</dfn> is a [=party=] with which the [=user=] intends to
+          interact. Merely hovering over, muting, pausing, or closing a given piece of content does
+          not constitute a [=user=]'s intent to interact with another party, nor does the simple
+          fact of loading a [=party=] embedded in the one with which the user intends to
+          interact. In cases of clear and conspicuous joint branding, there can be multiple [=first
+          parties=]. The [=first party=] is necessarily a [=data controller=] of the data processing
+          that takes places as a consequence of a [=user=] interacting with it.
+        </p>
+        <p>
+          A <dfn data-lt="third parties">third party</dfn> is any [=party=] other than the [=user=],
+          the [=first party=], or a [=service provider=] acting on behalf of either the [=user=] or
+          the [=first party=].
+        </p>
+        <p>
+          A <dfn>service provider</dfn> or <dfn>data processor</dfn> is considered to be the same
+          [=party=] as the entity contracting it to perform the relevant [=processing=] if it:
+        </p>
+        <ul>
+          <li>
+            is processing the data on behalf of that [=party=];
+          </li>
+          <li>
+            ensures that the data is only retained, accessed, and used as directed by that [=party=]
+            and solely for the list of explicitly-specified [=purposes=] detailed by the directing
+            [=party=] or [=data controller=];
+          </li>
+          <li>
+            may determine implementation details of the data processing in question but does not
+            determine the [=purpose=] for which the data is being [=processed=] nor the overarching
+            [=means=] through which the [=purpose=] is carried out;
+          </li>
+          <li>
+            has no independent right to use the data other than in a [=permanently de-identified=]
+            form (e.g., for monitoring service integrity, load balancing, capacity planning, or
+            billing); and,
+          </li>
+          <li>
+            has a contract in place with the [=party=] which is consistent with the above limitations.
+          </li>
+        </ul>
+        <p>
+          A <dfn>data controller</dfn> is an entity that determines the [=means=] and [=purposes=]
+          of data processing. Any party that is not a [=service provider=] is a [=data controller=].
+        </p>
+        <p>
+          The <dfn>Vegas Rule</dfn> is a simple implementation of privacy in which "<em>what happens
+          with the [=first party=] stays with the [=first party=]</em>." Put differently, it
+          describes a situation in which the [=first party=] is the only [=data controller=].
+        </p>
       </section>
       <section>
         <h2>Acting on Data</h2>
