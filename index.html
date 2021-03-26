@@ -103,6 +103,12 @@
             href: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5124066/',
             publisher: 'Philosophical Transacions A',
           },
+          'PRIVACY-IN-CONTEXT': {
+            title: 'Privacy in Context',
+            authors: ['Helen Nissenbaum'],
+            href: 'https://www.sup.org/books/title/?id=8862',
+            publisher: 'SUP',
+          },
           'PRIVACY-IS-POWER': {
             title: 'Privacy Is Power',
             authors: ['Carissa Véliz'],
@@ -314,17 +320,74 @@
       <section>
         <h2>Contexts and Privacy</h2>
         <p>
-          Tk
+          The <dfn>purpose</dfn> of a given [=processing=] of data is an anticipated, intended, or
+          planned outcome of this [=processing=] which is achieved or aimed for within a given
+          [=context=]. A [=purpose=], when described, should be specific enough to be actionable by
+          someone familiar with the relevant [=context=] (ie. they could independently determine
+          [=means=] that reasonably correspond to those being effectively deployed).
         </p>
-        <!--
-          - context
-          - contextual integrity (not by origin and not through the political economy, explain well)
-          - privacy
-          - privacy violation
-          - privacy labour
-          - purpose: how do we define this? based on context, it has to be, and the purpose can only
-            ever be valid *in* context
-        -->
+        <p>
+          The <dfn>means</dfn> are the general method of [=data processing=] through which a given
+          [=purpose=] is implemented, in a given [=context=], considered at a relatively abstract
+          level and not necessarily all the way down to implementation details. Example:
+          <em>the user will have their preferences restored (purpose) by looking up their identifier
+          in a preferences store (means)</em>.
+        </p>
+        <p>
+          A <dfn>context</dfn> is a physical or digital environment that a [=person=] interacts with
+          for a purpose of their own (that they typically share with other [=person=] who interact
+          with the same environment).
+        </p>
+        <p>
+          A [=context=] can be further described through:
+        </p>
+        <ul>
+          <li>
+            Its <dfn>actors</dfn>, which comprise the <dfn>subject</dfn> (a [=person=]) as well as
+            the <dfn>sender</dfn> and <dfn>recipient</dfn> of the data (which are [=parties=]).
+          </li>
+          <li>
+            Its <dfn>attributes</dfn>, which are the types of [=personal data=] being [=processed=]
+            in the [=context=].
+          </li>
+          <li>
+            Its <dfn>transmission principles</dfn>, which are the constraints (typically technical
+            or legal) being placed upon the [=data processing=].
+          </li>
+        </ul>
+        <p>
+          A [=context=] carries <dfn>context-relative informational norms</dfn> that determine
+          whether a given [=data processing=] is <dfn>appropriate</dfn> (if the norms are adhered to)
+          or <dfn>inappropriate</dfn> (when the norms are violated). A norm violation can be for
+          instance the exfiltration of [=personal data=] from a context or the lack of respect for
+          [=transmission princples=].
+        </p>
+        <p>
+          We define <dfn>privacy</dfn> as a right to [=appropriate=] [=data processing=]. A
+          <dfn>privacy violation</dfn> is, correspondingly, [=inappropriate=] [=data processing=]
+          [[PRIVACY-IN-CONTEXT]].
+        </p>
+        <p>
+          Note that a [=first party=] can be comprised of multiple [=contexts=] if it is large
+          enough that [=persons=] would interact with it for more than one [=purpose=]. [=Sharing=]
+          [=personal data=] across [=contexts=] is, in the overwhelming majority of cases,
+          [=inappropriate=].
+        </p>
+        <div class="example">
+          <p>
+            Your cute little pup uses <em>Poodle Naps</em> to find comfortable places to snooze,
+            and <em>Poodle Fetch</em> to locate the best sticks. Napping and fetching are different
+            [=contexts=] with different norms, and sharing data between these contexts is a
+            [=privacy violation=] despite the shared ownership of <em>Naps</em> and <em>Fetch</em>
+            by the <em>Poodle</em> conglomerate.
+          </p>
+        </div>
+        <p>
+          Additionally, <dfn data-lt="privacy-labor">privacy labour</dfn> is the practice of having
+          a [=person=] carry out the work of ensuring [=data processing=] of which they are the
+          subject is [=appropriate=], instead of having the [=parties=] be responsible for that
+          work as is more respectable.
+        </p>
       </section>
       <section>
         <h2>User Agents</h2>
