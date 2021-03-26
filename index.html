@@ -5,6 +5,15 @@
     <script src="https://www.w3.org/Tools/respec/respec-w3c" async class="remove"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%220.9em%22 font-size=%22105%22>🐶</text></svg>">
     <title>Principles of User Privacy (PUP)</title>
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@robinberjon">
+    <meta name="twitter:creator" content="@robinberjon">
+    <meta name="twitter:title" property="og:title" content="Principles of User Privacy (PUP)">
+    <meta name="twitter:description" property="og:description" content="Setting the standard for a robust, policy-ready understanding of privacy.">
+    <meta name="twitter:image" property="og:image" content="pup.png">
+    <meta name="twitter:image:alt" content="A cute puppy face drawing">
+    <meta name="twitter:url" property="og:url" content="https://darobin.github.io/pup/">
+    <meta property="og:locale" content="en">
     <style>
       body {
         background: url(proposal.svg) no-repeat fixed !important;
@@ -135,9 +144,9 @@
   <body>
     <section id="abstract">
       <p>
-        Privacy is an essentially contested concept [[PRIVACY-CONTESTED]]. Its debated meaning
+        Privacy is an essentially contested concept [[?PRIVACY-CONTESTED]]. Its debated meaning
         render its support problematic in the context of a standards-setting process grounded in
-        consensus [[W3C-PROCESS]], in seeking out technical solutions grounded on shared
+        consensus [[?W3C-PROCESS]], in seeking out technical solutions grounded on shared
         requirements, and in addressing the needs of a worldwide constituency. This document
         provides definitions for privacy and related concepts that are suitable for a global
         audience, that can ground a methodology for privacy threat modelling, and can guide the
@@ -150,9 +159,9 @@
     <section>
       <h2>Introduction</h2>
       <p>
-        Privacy is essential to trust, and trust is a cornerstone value of the Web [[RFC8890]].
+        Privacy is essential to trust, and trust is a cornerstone value of the Web [[?RFC8890]].
         In much of everyday life, people have little difficulty assessing whether a given flow of
-        information constitutes a violation of privacy or not [[NYT-OPEN]]. However, in the digital
+        information constitutes a violation of privacy or not [[?NYT-PRIVACY]]. However, in the digital
         space, users struggle to understand how their data may flow between contexts and how such
         flows may affect them, not just immediately but at a much later time and in completely
         different situations. Some actors then seize upon this confusion in order to extract and
@@ -184,6 +193,7 @@
           - personal data
           - data subject
           - deidentified data
+            - include note about deidentified data and pointer to that section
           - context
           - contextual integrity (not by origin and not through the political economy, explain well)
           - privacy
@@ -243,7 +253,9 @@
     <section>
       <h2>User Control and Autonomy</h2>
       <p>
-        Tk
+        We need to start from a simple yet salient point: in today's data economy, informational
+        self-determination is impossible. It is crucially not to confuse this fact, as others have
+        before, with the contention that privacy is dead.
       </p>
       <!--
         - increased choice is not increased autonomy
@@ -261,6 +273,17 @@
             being transmitted shown at all times, in such a way that the user can easily swich it
             off. In general, providing consent should be rare, difficult, highly intensional, and
             temporary
+        - FIPs
+          - the FIPs put all the load on self-determination and therefore do not forbid specific
+            types of data processing, they only place them under different procedural requirements.
+          - one problem with procedural approaches to privacy is that they place the same
+            requirements in situations where the parties operate under huge asymmetries of power
+            — for instance the user of an essential service provided by a monopolistic platform —
+            and parties that are very much on equal footing, or even where the data subject may have
+            greater power, as is the case with small businesses operating in a competitive
+            environment. It further does not consider cases in which one business may coerce other
+            businesses into facilitating its extractive practices, as is often the case with
+            dominant players in advertising or in content aggregation [[CAT]].
         - explain that there is no value in asking users about technical methods (eg. cookies) but
           only ever about purposes
         - the value in global opt outs
@@ -271,9 +294,17 @@
               opt you out if you ever are opted in
         - dark patterns
         - tiered models by context defined in standards
-          - define legitimate interest based on CI
+          - define legitimate interest based on CI. LI tends to be understood as "what we can get
+            away with without having to rely on consent" instead of what legitimately matches the
+            expectations and interests of both parties in a relationship. Add some relational, some
+            fiduciary values to support it. In fact, LI could be grounded entirely in fiduciary
+            values as expressed by Hartzog.
       -->
     </section>
+    <!--
+      XXX
+        - section on identity? p.25 notebook
+    -->
     <section>
       <h2>Collective Issues in Privacy</h2>
       <p>
@@ -281,10 +312,28 @@
       </p>
       <!--
         - legibility
-        - second-wave colonisation
+        - data protection is all about the data, maybe it should be more about the people [[REL-TURN]]
+        - the FIPs were designed for an area of databases, not for the data market and the data
+          industrial complex. Individual privacy harms exist [[CITRON-SOLOVE]] but the collective
+          aspects need focus too.
+        - data can be used to decide what we see and what we prefer
+          - "To govern is to make believe." —Machiavelli
+        - second-wave colonisation: extractive practices with respect to countries that do not have
+          significant data industrial presence
         - data markets, differential valuation, rivalrous + non-exludable
+
+        - The "relational turn" considers the relation between the people who expose themselves and
+          the entities that invite that disclosure. It's about power. One key understanding here is
+          that, unlike traditional data protection, this relation persists even when data is
+          anonymised since power can stem from an excessive, asymmetric understanding of cohorts.
+          This is why data derived from individual data must itself be governed in some cases
+          (which we need to define), even if deidentified. What makes an understanding excessive?
+          That is a question for agency that might not entirely fit here.
+        - Collective issues in data require collective solutions. The proper goal of data governance
+          at the standards-setting level is the provision of institutions that can handle
+          population-level problems in data, and it might not necessarily do so by increasing
+          individual control over data.
       -->
     </section>
-    <section id="conformance"></section>
   </body>
 </html>
