@@ -132,6 +132,11 @@
             href: 'https://www.publicaffairsbooks.com/titles/shoshana-zuboff/the-age-of-surveillance-capitalism/9781610395694/',
             publisher: 'Hachette Public Affairs',
           },
+          'TAKING-TRUST-SERIOUSLY': {
+            title: 'Taking Trust Seriously in Privacy Law',
+            href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2655719',
+            authors: ['Neil Richards', 'Woodrow Hartzog'],
+          },
           'TRACKING-PREVENTION-POLICY': {
             title: 'Tracking Prevention Policy',
             href: 'https://webkit.org/tracking-prevention-policy/',
@@ -361,10 +366,10 @@
         </ul>
         <p>
           A [=context=] carries <dfn>context-relative informational norms</dfn> that determine
-          whether a given [=data processing=] is <dfn>appropriate</dfn> (if the norms are adhered to)
-          or <dfn>inappropriate</dfn> (when the norms are violated). A norm violation can be for
-          instance the exfiltration of [=personal data=] from a context or the lack of respect for
-          [=transmission principles=].
+          whether a given [=data processing=] is <dfn data-lt="appropriately">appropriate</dfn>
+          (if the norms are adhered to) or <dfn data-lt="inappropriately">inappropriate</dfn>
+          (when the norms are violated). A norm violation can be for instance the exfiltration of
+          [=personal data=] from a context or the lack of respect for [=transmission principles=].
         </p>
         <p>
           We define <dfn>privacy</dfn> as a right to [=appropriate=] [=data processing=]. A
@@ -396,26 +401,59 @@
       <section>
         <h2>User Agents</h2>
         <p>
-          Tk
+          The <dfn>user agent</dfn> acts as an intermediary between a [=user=] and the web. The
+          [=user agent=] is <em>not</em> a [=context=] and <em>not</em> the [=first party=]. The
+          [=user agent=] serves the [=user=] in a <dfn data-lt="fiduciary relationship">relationship of fiduciary agency</dfn>: it always puts
+          the [=user=]'s interest first, up to and including, on occasion, protecting the [=user=]
+          from themselves by preventing them from carrying out a harmful decision, or at the very
+          least by speed-bumping it. Its <dfn>fiduciary duties</dfn> include
+          [[TAKING-TRUST-SERIOUSLY]]:
         </p>
-        <!--
-          - user agent (distinct from the parties)
-            - the UA is not a context, collecting data from the UA beyond basic privacy-preserving
-              telemetry to inform product design and the future of the Web is a violation of privacy
-              (unless there is reliable multistakeholder governance over the collection to confer it
-              a form of democratic legitimity)
-          - fiduciary
-          - self-dealing
-          - care
-            - the difference between care and data paternalism is that the latter purports to help
-              in part by removing agency ("don't worry about it, so long as your data is with us
-              it's safe, you don't need to know what we do with it, it's all good because we're
-              good people") whereas care aims to support people by enhancing their agency and
-              sovereignty
-          - honesty
-          - loyalty
-          - protection & data protection
-        -->
+        <dl>
+          <dt><dfn>Duty of Protection</dfn></dt>
+          <dd>
+            Protection requires [=user agents=] to affirmatively protect a [=user=]'s data, beyond
+            simple security measures. It is insufficient simply to encrypt at rest and in transit,
+            but one must further limit retention, ensure that the strictly necessary data is
+            collected, or require guarantees from those it is shared to.
+          </dd>
+          <dt><dfn>Duty of Discretion</dfn></dt>
+          <dd>
+            Discretion requires the [=user agent=] to make best efforts to enforce
+            [=context-relative informational norms=] by placing contextual limits on the flow and
+            [=processing=] of [=personal data=]. Discretion is not confidentiality and may place
+            limits on nondisclosure: trust can be preserved even when the [=user agent=] shares the
+            [=personal data=], so long as it is done in an [=appropriately=] discreet manner.
+          </dd>
+          <dt><dfn>Duty of Honesty</dfn></dt>
+          <dd>
+            Honesty requires that the [=user agent=] make sure that the [=user=] is proactively
+            provided with information that is relevant to them and that will enhance the [=user=]'s
+            autonomy, to the extent possible in a manner that they will comprehend and at the right
+            moment, which is almost never when the [=user=] is trying to do something else such as
+            read a page or activate a feature. The duty of honesty goes well beyond that of
+            transparency that dominates legacy privacy regimes. Unlike with transparency, honesty
+            cannot get away with hiding relevant information in complex out-of-band legal notices
+            no more than it can rely on overly cursory information provided in a consent dialog.
+          </dd>
+          <dt><dfn>Duty of Loyalty</dfn></dt>
+          <dd>
+            Because of the special [=fiduciary relationship=] that obtains between [=user=] and
+            [=user agent=], the latter is held to be loyal to the former in all situations, up to and
+            including in preference to the [=user agent=] implementer. When a [=user agent=] carries
+            out [=processing=] that is not directly in the [=user=]'s interest but rather benefits
+            another entity such as its implementer, that behaviour is known as <dfn>self-dealing</dfn>.
+            [=Self-dealing=] is always [=inappropriate=]. Loyalty is the avoidance of [=self-dealing=].
+          </dd>
+        </dl>
+        <p>
+          These duties ensure the [=user agent=] will <em>care</em> for the user. It is important to
+          note that there is a subtle difference between care and <dfn>data paternalism</dfn> which
+          is that the latter purports to help in part by removing agency ("<em>don't worry about it,
+          so long as your data is with us it's safe, you don't need to know what we do with it, it's
+          all good because we're good people</em>") whereas care aims to support people by enhancing
+          their agency and sovereignty.
+        </p>
       </section>
     </section>
     <section>
