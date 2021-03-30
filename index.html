@@ -109,6 +109,11 @@
             href: 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5124066/',
             publisher: 'Philosophical Transacions A',
           },
+          'PRIVACY-HARMS': {
+            title: 'Privacy Harms',
+            authors: ['Danielle Keats Citron', 'Daniel J. Solove'],
+            href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3782222',
+          },
           'PRIVACY-IN-CONTEXT': {
             title: 'Privacy in Context',
             authors: ['Helen Nissenbaum'],
@@ -242,7 +247,7 @@
           <a href="#collective">Collective Issues in Privacy</a> section.
         </p>
         <p>
-          A <dfn>vulnerable person</dfn> is a [=person=] who, at least in the [=context=] of
+          A <dfn data-lt="vulnerable">vulnerable person</dfn> is a [=person=] who, at least in the [=context=] of
           the [=processing=] being discussed, are unable to exercise sufficient
           self-determination for any consent they may provide to be receivable. This includes for
           example children, employees with respect to their employers, people in some situations of
@@ -469,34 +474,67 @@
     </section>
     <section>
       <h2>Privacy Threat Model Building Blocks</h2>
-      <p>
-        Privacy threat models for the Web exist ([[TRACKING-PREVENTION-POLICY]], [[ANTI-TRACKING-POLICY]],
-        [[PRIVACY-THREAT]]). While good within the scope of what they intend to do, they tend to be
-        very specific to cross-context tracking as seen by the browser, which is but one problem.
-        Privacy threat modelling could benefit from having more of a toolbox to reuse in different
-        situations.
-      </p>
-      <p>
-        This section provides some building blocks for the creation of <dfn>privacy threat models</dfn> on
-        the Web. Note that privacy threat models have an important difference with security threat
-        models in that <em>all</em> [=parties=] are potential threats, even when they are not rogue.
-        In fact the [=first party=] is typically considered to be the primary threat, the one
-        against which the brunt of mitigating techniques are to be leveraged.
-      </p>
-      <p>
-        The most important building blocks for a privacy threat model are those that define a
-        [=context=]: [=actors=], [=attributes=], and [=transmission principles=], as well as the
-        [=context-relative informational norms=]. Collectively, these define the expectations that
-        obtain in a given [=context=]. Based on these expectations, it becomes possible to ask
-        questions about the ways in which they could fail and how to prevent. What happens if the
-        [=subject=] is a [=vulnerable person=]? How well does the context fare if expectations of
-        consent are undermined by manipulative techniques [[DIGITAL-MARKET-MANIPULATION]]?
-        If the [=transmission principles=] are based on sharing data with parties while telling
-        them that they cannot use it, what confidence do we have that they are following the rules?
-      </p>
-      <!--
-        - Citron Solove
-      -->
+      <section>
+        <h2>Threats Are Context-Relative</h2>
+        <p>
+          Privacy threat models for the Web exist ([[?TRACKING-PREVENTION-POLICY]], [[?ANTI-TRACKING-POLICY]],
+          [[?PRIVACY-THREAT]]). While good within the scope of what they intend to do, they tend to be
+          very specific to cross-context tracking as seen by the browser, which is but one problem.
+          Privacy threat modelling could benefit from having more of a toolbox to reuse in different
+          situations.
+        </p>
+        <p>
+          This section provides some building blocks for the creation of <dfn>privacy threat models</dfn> on
+          the Web. Note that privacy threat models have an important difference with security threat
+          models in that <em>all</em> [=parties=] are potential threats, even when they are not rogue.
+          In fact the [=first party=] is typically considered to be the primary threat, the one
+          against which the brunt of mitigating techniques are to be leveraged.
+        </p>
+        <p>
+          The most important building blocks for a privacy threat model are those that define a
+          [=context=]: [=actors=], [=attributes=], and [=transmission principles=], as well as the
+          [=context-relative informational norms=]. Collectively, these define the expectations that
+          obtain in a given [=context=]. Based on these expectations, it becomes possible to ask
+          questions about the ways in which they could fail and how to prevent. What happens if the
+          [=subject=] is a [=vulnerable person=]? How well does the context fare if expectations of
+          consent are undermined by manipulative techniques [[?DIGITAL-MARKET-MANIPULATION]]?
+          If the [=transmission principles=] are based on sharing data with parties while telling
+          them that they cannot use it, what confidence do we have that they are following the rules?
+        </p>
+        <p>
+          When assessing privacy threats, it is not necessary to establish harms since breaking the
+          [=context=]'s norms is [=inappropriate=] in all cases. However, consideration of harms can
+          inform which issues to prioritise. Where individual harms are concerned, the definitive
+          source is <em>Privacy Harms</em> [[?PRIVACY-HARMS]].
+        </p>
+      </section>
+      <section>
+        <h2>Identity on the Web</h2>
+        <p>
+          Only the most powerful can afford to have the same identity across contexts without
+          adverse consequences. Identity is by nature fragmented, and [=user agents=] must work in
+          support of [=users=] having different identities in different [=context=] and to prevent
+          their recognition. The more [=vulnerable=] one is, the more important it is to fragment
+          identities; supporting recognition across contexts is oppressive as it forces
+          vulnerability into the open. [=User agents=] should actively prevent identification
+          across [=contexts=], including where their own vendors are concerned.
+        </p>
+        <p>
+          With this in mind, one threat to user privacy and trust on the Web is the use of email for
+          [=purposes=] beyond login and direct communication with the user. Email is often used as a
+          login key, and has the valuable property that it can then be used for transactional
+          messaging as well as for newsletters and direct marketing (where respectful). It is,
+          however, increasingly being reused in order to recognise [=users=] across [=contexts=] to
+          track and target them in [=inappropriate=] ways. This use is contrary to the expectation
+          of users and leads to decreased trust which over time will lead users to shy away from
+          providing their email even to sites that only use it for legitimate [=purposes=].
+        </p>
+        <p>
+          It is important to the Web that one can log into a site with full trust, without worrying
+          that this will enable cross-context recognition, spam, or other [=inappropriate=] uses of
+          data.
+        </p>
+      </section>
     </section>
     <section>
       <h2>User Control and Autonomy</h2>
@@ -549,22 +587,6 @@
             expectations and interests of both parties in a relationship. Add some relational, some
             fiduciary values to support it. In fact, LI could be grounded entirely in fiduciary
             values as expressed by Hartzog.
-      -->
-    </section>
-    <section>
-      <h2>Identity on the Web</h2>
-      <p>
-        Tk
-      </p>
-      <!--
-        - only the most powerful can afford to have the same identity across contexts without
-          adverse consequences. Identity is by nature fragmented, and UAs must work in support of
-          users having different identifies in every context and to prevent their recognition.
-          The more vulnerable one is, the more important it is to fragment identities, supporting
-          recognition across contexts is oppressive as it forces vulnerability into the open. UAs
-          should actively prevent identification across contexts, including across their vendors.
-        - Each context should be an identity fragmentainer.
-        - lift MOI from RHEA
       -->
     </section>
     <section id="collective">
