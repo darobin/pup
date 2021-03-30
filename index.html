@@ -57,6 +57,12 @@
             authors: ['Lindsey Barrett'],
             href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3354129',
           },
+          'DIGITAL-MARKET-MANIPULATION': {
+            title: 'Digital Market Manipulation',
+            authors: ['Ryan Calo'],
+            href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2309703',
+            publisher: 'George Washington Law Review',
+          },
           'EUROBAROMETER-443': {
             title: 'Eurobarometer 443: e-Privacy',
             authors: ['European Commission'],
@@ -160,7 +166,7 @@
         consensus [[?W3C-PROCESS]], in seeking out technical solutions grounded on shared
         requirements, and in addressing the needs of a worldwide constituency. This document
         provides definitions for privacy and related concepts that are suitable for a global
-        audience, that can ground a methodology for privacy threat modelling, and can guide the
+        audience, that can provide building blocks for privacy threat modelling, and can guide the
         development of the Web as a trustworthy platform. In the spirit of building a much-needed
         bridge between technology and policy, this document is written under the expectation that
         it can apply to both.
@@ -402,12 +408,17 @@
         <h2>User Agents</h2>
         <p>
           The <dfn>user agent</dfn> acts as an intermediary between a [=user=] and the web. The
-          [=user agent=] is <em>not</em> a [=context=] and <em>not</em> the [=first party=]. The
-          [=user agent=] serves the [=user=] in a <dfn data-lt="fiduciary relationship">relationship of fiduciary agency</dfn>: it always puts
+          [=user agent=] is <em>not</em> a [=context=] in that it is expected to coincide with the
+          [=subject=] and operate exclusively in the [=subject=]'s interest. It is <em>not</em> the
+          [=first party=]. The [=user agent=] serves the [=user=] in a
+          <dfn data-lt="fiduciary relationship">relationship of fiduciary agency</dfn>: it always puts
           the [=user=]'s interest first, up to and including, on occasion, protecting the [=user=]
           from themselves by preventing them from carrying out a harmful decision, or at the very
-          least by speed-bumping it. Its <dfn>fiduciary duties</dfn> include
-          [[TAKING-TRUST-SERIOUSLY]]:
+          least by speed-bumping it. For example, the [=user agent=] will make it difficult for the
+          [=user=] to connect to a site the authenticity of which is hard to ascertain, will double-check that
+          the user really intends to expose a sensitive device capability, or will prevent the
+          [=user=] from consenting to permanent monitoring of their behaviour. Its <dfn>fiduciary
+          duties</dfn> include [[TAKING-TRUST-SERIOUSLY]]:
         </p>
         <dl>
           <dt><dfn>Duty of Protection</dfn></dt>
@@ -457,15 +468,34 @@
       </section>
     </section>
     <section>
-      <h2>Privacy Threat Model Methodology</h2>
+      <h2>Privacy Threat Model Building Blocks</h2>
       <p>
-        Tk
+        Privacy threat models for the Web exist ([[TRACKING-PREVENTION-POLICY]], [[ANTI-TRACKING-POLICY]],
+        [[PRIVACY-THREAT]]). While good within the scope of what they intend to do, they tend to be
+        very specific to cross-context tracking as seen by the browser, which is but one problem.
+        Privacy threat modelling could benefit from having more of a toolbox to reuse in different
+        situations.
+      </p>
+      <p>
+        This section provides some building blocks for the creation of <dfn>privacy threat models</dfn> on
+        the Web. Note that privacy threat models have an important difference with security threat
+        models in that <em>all</em> [=parties=] are potential threats, even when they are not rogue.
+        In fact the [=first party=] is typically considered to be the primary threat, the one
+        against which the brunt of mitigating techniques are to be leveraged.
+      </p>
+      <p>
+        The most important building blocks for a privacy threat model are those that define a
+        [=context=]: [=actors=], [=attributes=], and [=transmission principles=], as well as the
+        [=context-relative informational norms=]. Collectively, these define the expectations that
+        obtain in a given [=context=]. Based on these expectations, it becomes possible to ask
+        questions about the ways in which they could fail and how to prevent. What happens if the
+        [=subject=] is a [=vulnerable person=]? How well does the context fare if expectations of
+        consent are undermined by manipulative techniques [[DIGITAL-MARKET-MANIPULATION]]?
+        If the [=transmission principles=] are based on sharing data with parties while telling
+        them that they cannot use it, what confidence do we have that they are following the rules?
       </p>
       <!--
-        - explain the difference with security: all the parties other than the user are threats,
-          including the first party (first and foremost) and the user agent
-        - defining a context
-        - respecting contextual integrity
+        - Citron Solove
       -->
     </section>
     <section>
