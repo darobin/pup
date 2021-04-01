@@ -52,6 +52,11 @@
             publisher: 'Princeton University Press',
             status: 'You can read this book free of charge, but Matt is an outstanding author and I encourage you to support him by buying his book!',
           },
+          'CAT': {
+            title: 'Content Aggregation Technology (CAT)',
+            authors: ['Robin Berjon', 'Justin Heideman'],
+            href: 'https://nytimes.github.io/std-cat/',
+          },
           'CONFIDING': {
             title: 'Confiding in Con Men: U.S. Privacy Law, the GDPR, and Information Fiduciaries',
             authors: ['Lindsey Barrett'],
@@ -588,20 +593,52 @@
     <section>
       <h2>User Control and Autonomy</h2>
       <p>
-        We need to start from a simple yet salient point: in today's data economy, complete informational
-        self-determination is impossible. It is crucial not to confuse this fact, as others have
-        before, with the contention that privacy is dead.
+        A [=person=]'s <dfn data-lt="autonomous">autonomy</dfn> is their ability to make decisions of their own volition,
+        without undue influence from other parties. People have limited intellectual resources and
+        time with which to weigh decisions, and by necessity rely on shortcuts when making
+        decisions. This makes their privacy preferences malleable [[?PRIVACY-BEHAVIOR]] and susceptible to
+        manipulation [[?DIGITAL-MARKET-MANIPULATION]]. A [=person=]'s [=autonomy=] is enhanced by a
+        system or device when it offers a shortcut that aligns more with what that [=person=] would
+        have decided given arbitrary amounts of time and relatively unfettered intellectual ability
+        and decreased when the shortcut moves in the opposite decision.
       </p>
       <p>
-        A second important point to keep in mind throughout this section is that increased choice is
-        not increased autonomy — and autonomy is what we seek. There is ample evidence that people's
-        privacy preferences are malleable [[?PRIVACY-BEHAVIOR]] and that they are susceptible to
-        manipulation [[?DIGITAL-MARKET-MANIPULATION]]. Users have scarce time and mental resources,
-        and when presented with an interruptive decision as they try to accomplish a task such as
-        reading an article or turning on a feature, they will tend to accept legal terms simply to
-        dismiss them. The Web community discovered decades ago that such dialogs were terrible for
-        security and has, to the extent possible, moved away from them. There is no reason to believe
-        that the ActiveX model is any better at protecting privacy than it was at providing security.
+        Because we are all subject to motivated reasoning, the design of defaults and affordances
+        that may impact [=user=] [=autonomy=] should be the subject of independent scrutiny.
+        Readers are enjoined to be particularly cautious to avoid slipping into [=data paternalism=].
+      </p>
+      <p>
+        Given the sheer volume of potential [=data=]-related decisions in today's data economy,
+        complete informational self-determination is impossible. This fact, however, should not be
+        confused with the contention that privacy is dead. Careful design of our technological
+        infrastructure can ensure that [=users=]' [=autonomy=] as pertaining to their own [=data=]
+        is enhanced through [=appropriate=] defaults and choice architectures.
+      </p>
+      <p>
+        In the 1970s, the <dfn>Fair Information Practices</dfn> or <dfn>FIPs</dfn> were elaborated
+        in support of individual [=autonomy=] in the face of growing concerns with databases. The
+        [=FIPs=] assume that there is sufficiently little [=data processing=] taking place that any
+        [=person=] will be able to carry out sufficient diligence to enable [=autonomous=]
+        decision-making by the [=data subject=]. Since they entirely offload the [=privacy labour=]
+        to [=users=] and assume perfect, unfettered [=autonomy=], the [=FIPs=] do not forbid specific
+        types of [=data processing=], they only place them under different procedural requirements.
+        This is [=appropriate=] for [=parties=] that are processing data in the 1970s.
+      </p>
+      <p>
+        One notable issue with procedural approaches to privacy is that they tend to have the same
+        requirements in situations where the [=user=] finds themselves in a significant asymmetry of
+        power with a [=party=] — for instance the [=user=] of an essential service provided by a
+        monopolistic platform — and those where [=user=] and [=parties=] are very much on equal
+        footing, or even where the [=user=] may have greater power, as is the case with small
+        businesses operating in a competitive environment. It further does not consider cases in
+        which one [=party=] may coerce other [=parties=] into facilitating its [=inappropriate=]
+        practices, as is often the case with dominant players in advertising or in content
+        aggregation [[?CAT]].
+      </p>
+      <p>
+        Reference to the [=FIPs=] survives to this day. They are often referenced as <em>transparency
+        and choice</em>, which, in today's digital environment, is often a strong indication that
+        [=inappropriate=] [=processing=] is being described
       </p>
       <figure>
         <img src="agnes-tc.jpg" alt="Agnes from Wandavision winking 'Transparency and choice'">
@@ -617,6 +654,7 @@
         </p>
         <!--
           Opt-in and consent
+          - extremes
           - !!! explain this with contexts and threat modelling
             - the bookstore
             - opt in/consent
@@ -643,26 +681,6 @@
             - understanding global opt outs under consent regimes such as the GDPR
               - the GOO essentially conveys a preference for state, not for transition, so it will
                 opt you out if you ever are opted in
-        -->
-      </section>
-      <section>
-        <h2>FIPs</h2>
-        <p>
-          XXX
-        </p>
-        <!--
-          - quick summary of the FIPs, mention RelTurn and the killer Barrett quote, great if you're
-            partying with data like it's 1972.
-          - the FIPs put all the load on self-determination and therefore do not forbid specific
-            types of data processing, they only place them under different procedural requirements.
-          - one problem with procedural approaches to privacy is that they place the same
-            requirements in situations where the parties operate under huge asymmetries of power
-            — for instance the user of an essential service provided by a monopolistic platform —
-            and parties that are very much on equal footing, or even where the data subject may have
-            greater power, as is the case with small businesses operating in a competitive
-            environment. It further does not consider cases in which one business may coerce other
-            businesses into facilitating its extractive practices, as is often the case with
-            dominant players in advertising or in content aggregation [[CAT]].
         -->
       </section>
       <section>
