@@ -193,11 +193,11 @@
         space, users struggle to understand how their data may flow between contexts and how such
         flows may affect them, not just immediately but at a much later time and in completely
         different situations. Some actors then seize upon this confusion in order to extract and
-        exploit personal data at unprecedented scale.
+        exploit [=personal data=] at unprecedented scale.
       </p>
       <p>
         The goal of this document is to define all the terms that may prove useful in developing
-        technology and policy that relate to privacy and personal data. It additionally provides
+        technology and policy that relate to privacy and [=personal data=]. It additionally provides
         several frameworks that address the common need that is privacy threat modelling, the
         frequent debate over consent, and the under-developed set of issues in privacy that are of a
         collective, relational nature.
@@ -221,7 +221,7 @@
           person.
         </p>
         <p>
-          We define <dfn>personal data</dfn> as any information relating to a [=person=] such
+          We define <dfn data-lt="data">personal data</dfn> as any information relating to a [=person=] such
           that:
         </p>
         <ul>
@@ -251,6 +251,41 @@
           combination with other retained or available information, including as being part of a
           group. Note that further considerations relating to groups are covered in the
           <a href="#collective">Collective Issues in Privacy</a> section.
+        </p>
+        <p>
+          Data is <dfn>pseudonymous</dfn> when:
+        </p>
+        <ul>
+          <li>
+            the identifiers used in the data are under the direct and exclusive control of the
+            [=first party=]; and
+          </li>
+          <li>
+            when these identifiers are shared with a [=third party=], they are made unique to that
+            [=third party=] such that if they are shared with more than one [=third party=] these
+            cannot then match them up; and
+          </li>
+          <li>
+            there is a strong level of confidence that no [=third party=] can match them to any data
+            other than that obtained through interactions with the [=first party=]; and
+          </li>
+          <li>
+            any [=third party=] receiving such identifiers is barred from sharing them or the
+            related data further; and
+          </li>
+          <li>
+            technical measures exist to prevent re-identification or the joining of different data
+            sets involving these identifiers, notably against timing or k-anonymity attacks; and
+          </li>
+          <li>
+            there exist contractual terms between the [=first party=] and [=third party=] describing
+            the limited [=purpose=] for which the data is being shared.
+          </li>
+        </ul>
+        <p>
+          This can ensure that [=pseudonymous=] is used in a manner consistent with sufficient
+          governance over the data such that technical and procedural means to guarantee the
+          maintenance of pseudonymity are preserved.
         </p>
         <p>
           A <dfn data-lt="vulnerable">vulnerable person</dfn> is a [=person=] who, at least in the [=context=] of
@@ -382,7 +417,7 @@
           </li>
         </ul>
         <p>
-          A [=context=] carries <dfn>context-relative informational norms</dfn> that determine
+          A [=context=] carries <dfn data-lt="norm">context-relative informational norms</dfn> that determine
           whether a given [=data processing=] is <dfn data-lt="appropriately">appropriate</dfn>
           (if the norms are adhered to) or <dfn data-lt="inappropriately">inappropriate</dfn>
           (when the norms are violated). A norm violation can be for instance the exfiltration of
@@ -509,36 +544,44 @@
         </p>
         <p>
           When assessing privacy threats, it is not necessary to establish harms since breaking the
-          [=context=]'s norms is [=inappropriate=] in all cases. However, consideration of harms can
-          inform which issues to prioritise. Where individual harms are concerned, the definitive
-          source is <em>Privacy Harms</em> [[?PRIVACY-HARMS]].
+          [=context=]'s [=norms=] is [=inappropriate=] in all cases. However, consideration of harms can
+          inform which issues to prioritise. Where individual <dfn>privacy harms</dfn> are to be
+          defined, the definitive source is <em>Privacy Harms</em> [[?PRIVACY-HARMS]].
         </p>
       </section>
       <section>
         <h2>Identity on the Web</h2>
         <p>
-          Only the most powerful can afford to have the same identity across contexts without
-          adverse consequences. Identity is by nature fragmented, and [=user agents=] must work in
-          support of [=users=] having different identities in different [=context=] and to prevent
-          their recognition. The more [=vulnerable=] one is, the more important it is to fragment
-          identities; supporting recognition across contexts is oppressive as it forces
-          vulnerability into the open. [=User agents=] should actively prevent identification
-          across [=contexts=], including where their own vendors are concerned.
+          A [=person=]'s <dfn>identity</dfn> is the set of characteristics that define them. In
+          computer systems, [=identity=] is typically attached to a means of denotation that makes
+          it easier for an automated system to recognise the user, an <dfn>identifier</dfn> of
+          some type.
         </p>
         <p>
-          With this in mind, one threat to user privacy and trust on the Web is the use of email for
-          [=purposes=] beyond login and direct communication with the user. Email is often used as a
-          login key, and has the valuable property that it can then be used for transactional
-          messaging as well as for newsletters and direct marketing (where respectful). It is,
-          however, increasingly being reused in order to recognise [=users=] across [=contexts=] to
-          track and target them in [=inappropriate=] ways. This use is contrary to the expectation
-          of users and leads to decreased trust which over time will lead users to shy away from
-          providing their email even to sites that only use it for legitimate [=purposes=].
+          A [=person=]'s characteristics, and therefore [=identity=], is entirely
+          [=context=]-dependent. Recognising a [=person=] in distinct [=contexts=] can at times be
+          [=appropriate=] but this relies on an understanding of applicable [=norms=] and will
+          likely require comportmentalisation. (For example, if you meet your therapist at a
+          cocktail party, you expect them to have rather different discussion topics with you than
+          they usually would, and possibly even to pretend they do not know you.) As a result,
+          automating the recognition of a [=person=]'s identity across different [=contexts=] is
+          [=inappropriate=]. This is particularly true for [=vulnerable=] people as recognising them
+          in different [=contexts=] may force their vulnerability into the open.
         </p>
         <p>
-          It is important to the Web that one can log into a site with full trust, without worrying
-          that this will enable cross-context recognition, spam, or other [=inappropriate=] uses of
-          data.
+          [=Identity=] being by nature fragmented, [=user agents=] must work in support of [=users=]
+          having different identities in different [=context=] with respect to <em>all</em> [=parties=]
+          and to prevent their recognition through other means, where possible.
+        </p>
+        <p>
+          A keystone principle of the Web is trust [[RFC8890]]. An important part of trust is to
+          ensure that [=data=] collected for a [=purpose=] that matches a clearly delineated [=user=]
+          feature should not then be used for additional secondary [=purposes=]. Email is often used
+          for login and communication [=purposes=], including essential transactional interactions.
+          Using emails for cross-context recognition [=purposes=] is therefore not only
+          [=inappropriate=] but also threatens key messaging infrastructure. Future iterations of
+          the Web platform should ensure that users can log into sites and receive communication
+          without relying on email at all.
         </p>
       </section>
     </section>
@@ -563,16 +606,22 @@
       <figure>
         <img src="agnes-tc.jpg" alt="Agnes from Wandavision winking 'Transparency and choice'">
         <figcaption>
-          Transparency and choice, a method of privacy regulation which promises
-          honesty and autonomy but delivers neither [[?CONFIDING]].
+          A method of privacy regulation which promises honesty and autonomy but delivers neither
+          [[?CONFIDING]].
         </figcaption>
       </figure>
       <section>
-        <h2>Opt-in, Opt-out, Consent, Global Controls</h2>
+        <h2>Opt-in, Consent, Opt-out, Global Controls</h2>
         <p>
           XXX
         </p>
         <!--
+          Opt-in and consent
+          - !!! explain this with contexts and threat modelling
+            - the bookstore
+            - opt in/consent
+            - opt out
+            - the tiered model
           - consent is bad for vulnerable subjects because it incentivises companies to NOT know
             that a given subject is vulnerable, in order not to be liable for it
           - outcomes versus means: increasing agency versus notice & choice
@@ -584,14 +633,16 @@
             being transmitted shown at all times, in such a way that the user can easily swich it
             off. In general, providing consent should be rare, difficult, highly intensional, and
             temporary
-            - the value in global opt outs
-              - rectify automation asymmetry
-              - essentially like having a robot click or convey opt out automatically for the user
-              - understanding global opt outs under consent regimes such as the GDPR
-                - the GOO essentially conveys a preference for state, not for transition, so it will
-                  opt you out if you ever are opted in
           - explain that there is no value in asking users about technical methods (eg. cookies) but
             only ever about purposes
+          Opt-out
+          - the value of these depends heavily
+          - the value in global opt outs
+            - rectify automation asymmetry
+            - essentially like having a robot click or convey opt out automatically for the user
+            - understanding global opt outs under consent regimes such as the GDPR
+              - the GOO essentially conveys a preference for state, not for transition, so it will
+                opt you out if you ever are opted in
         -->
       </section>
       <section>
