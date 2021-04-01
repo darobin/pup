@@ -603,6 +603,11 @@
         and decreased when the shortcut moves in the opposite decision.
       </p>
       <p>
+        Affordances and interactions that decrease [=autonomy=] are known as <dfn>dark patterns</dfn>.
+        A [=dark pattern=] does not have to be intentional, the deceptive effect is sufficient to
+        define them. <!-- XXX: include CITP work ref, maybe others -->
+      </p>
+      <p>
         Because we are all subject to motivated reasoning, the design of defaults and affordances
         that may impact [=user=] [=autonomy=] should be the subject of independent scrutiny.
         Readers are enjoined to be particularly cautious to avoid slipping into [=data paternalism=].
@@ -650,60 +655,89 @@
       <section>
         <h2>Opt-in, Consent, Opt-out, Global Controls</h2>
         <p>
-          XXX
+          Different procedural mechanisms exist to enable [=people=] to control the [=processing=]
+          done to their [=data=]. Mechanisms that increase the number of [=purposes=] for which
+          their [=data=] is being [=processed=] are referred to as <dfn data-lt="opt in">opt-in</dfn> or
+          <dfn>consent</dfn>; mechanisms that decrease this number of [=purposes=] are known as
+          <dfn data-lt="opt out">opt-out</dfn>.
         </p>
-        <!--
-          Opt-in and consent
-          - extremes
-          - !!! explain this with contexts and threat modelling
-            - the bookstore
-            - opt in/consent
-            - opt out
-            - the tiered model
-          - consent is bad for vulnerable subjects because it incentivises companies to NOT know
-            that a given subject is vulnerable, in order not to be liable for it
-          - outcomes versus means: increasing agency versus notice & choice
-          - consent is comparable to the general problem of permissions on the Web platform. In the
-            same way that it should be clear when a given device capability is in use (eg. you are
-            providing geolocation or camera access), sharing data should be set up in such a way
-            that it requires deliberate, specific action from the user (eg. triggering a form
-            control) and if that consent is persistent, there should be an indicator that data is
-            being transmitted shown at all times, in such a way that the user can easily swich it
-            off. In general, providing consent should be rare, difficult, highly intensional, and
-            temporary
-          - explain that there is no value in asking users about technical methods (eg. cookies) but
-            only ever about purposes
-          Opt-out
-          - the value of these depends heavily
-          - the value in global opt outs
-            - rectify automation asymmetry
-            - essentially like having a robot click or convey opt out automatically for the user
-            - understanding global opt outs under consent regimes such as the GDPR
-              - the GOO essentially conveys a preference for state, not for transition, so it will
-                opt you out if you ever are opted in
-        -->
-      </section>
-      <section>
-        <h2>Dark Patterns</h2>
         <p>
-          XXX
+          When deployed thoughtfully, these mechanisms can enhance [=people=]'s [=autonomy=]. Often,
+          however, they are used as a way to avoid putting in the difficult work of deciding which
+          types of [=processing=] are [=appropriate=] and which are not, offloading [=privacy labour=]
+          to the [=user=].
         </p>
-        <!--
-          - basically cite works on this, avoid in browsers
-        -->
-      </section>
-      <section>
-        <h2>Working From Default: A Tiered Model</h2>
         <p>
-          XXX
+          Privacy regulatory regimes are often anchored at extremes: either they default to allowing
+          only very few strictly essential [=purposes=] such that many [=parties=] will have to
+          resort to [=consent=], habituating [=people=] to ignore legal prompts and incentivising
+          [=dark patterns=], or, conversely, they default to forbidding only very few, particularly
+          egregious [=purposes=], such that [=people=] will have to perform the [=privacy labour=] to
+          [=opt out=] in every [=context=] in order to obtain [=processing=] that they deem
+          [=appropriate=].
         </p>
-        <!--
-          - define legitimate interest based on CI. LI tends to be understood as "what we can get
-            away with without having to rely on consent" instead of what legitimately matches the
-            expectations and interests of both parties in a relationship. Add some relational, some
-            fiduciary values to support it. In fact, LI could be grounded entirely in fiduciary
-            values as expressed by Hartzog.
-        -->
+        <p>
+          An approach that is more aligned with the expectation that the Web should provide a
+          trustworthy, [=person=]-centric environment is to establish a regime consisting of
+          three privacy tiers:
+        </p>
+        <dl>
+          <dt><dfn>Default Privacy Tier</dfn></dt>
+          <dd>
+            This is the set of [=purposes=] that are deemed [=appropriate=] in a given [=context=]
+            and the [=processing=] that a [=person=] can expect without having triggered any
+            mechanisms to change their preferences. The exact details for this tier require clear
+            definition, including details such as data retention, but [=data=] would have to be
+            systematically siloed by [=context=] (<em>not</em> by [=party=], making it stricter than
+            the [=Vegas Rule=]). This default tier should also be defined differently for certain
+            kinds of [=contexts=]. The legitimate [=processing=] that can take place in this tier
+            derives its legitimacy from matching the expectations and interests of both the [=user=]
+            and the [=first party=] in their relationship. This tier is more legitimate the more the
+            [=first party=] acts in accordance with [=fiduciary duties=].
+          </dd>
+          <dt><dfn>Opt-out Privacy Tier</dfn></dt>
+          <dd>
+            [=People=] who, either from personal preference or because they are [=vulnerable=],
+            require greater obscurity in some or even most [=contexts=], would be able to transition
+            to this tier through an [=opt-out=] mechanism. This tier would only permit strictly
+            necessary [=purposes=]. This tier should be [=appropriate=] for [=vulnerable=]
+            [=people=].
+          </dd>
+          <dt><dfn>Opt-in Privacy Tier</dfn></dt>
+          <dd>
+            In rare and highly specific cases, [=people=] should be able to [=consent=] to more
+            sensitive [=purposes=]. The burden of proof on ensuring that informed [=consent=] has
+            been obtained needs in this case to be very high (much higher than what prevails for
+            instance in [[?GDPR]] jurisdictions). [=Consent=] is comparable to the general problem
+            of permissions on the Web platform. In the same way that it should be clear when a given
+            device capability is in use (eg. you are providing geolocation or camera access), sharing
+            data under this tier should be set up in such a way that it requires deliberate, specific
+            action from the [=user=] (eg. triggering a form control) and if that [=consent=] is
+            persistent, there should be an indicator that data is being transmitted shown at all
+            times, in such a way that the user can easily switch it off. In general, providing
+            [=consent=] should be rare, difficult, highly intentional, and temporary.
+          </dd>
+        </dl>
+        <p>
+          When an [=opt-out=] mechanism exists, it should preferably be complemented by a
+          <dfn>global opt-out</dfn> mechanism. The function of a [=global opt-out=] mechanism is to
+          rectify the <dfn>automation asymmetry</dfn> whereby service providers can automate
+          [=data processing=] but [=people=] have to take manual action. A good example of a
+          [=global opt-out=] mechanism is the <em>Global Privacy Control</em> [[?GPC]].
+        </p>
+        <p>
+          Conceptually, a [=global opt-out=] mechanism is an automaton operating as part of the
+          [=user agent=], which is to say that it is equivalent to a robot that would carry out the
+          [=user=]'s bidding by pressing an [=opt-out=] button with every interaction that the
+          [=user=] has with a site, or more generally conveys an expression of the [=user=]'s
+          rights in a relevant jurisdiction (for instance, under [[?GDPR]], the [=user=] may be
+          conveying objections to [=processing=] based on legitimate interest or the withdrawal of
+          [=consent=] to specific [=purposes=]). It should be noted that, since a [=global opt-out=]
+          signal is reaffirmed automatically with every [=user=] interaction, it will take precedence
+          in terms of specificity over any manner of blanket [=consent=] that a site may obtain,
+          unless that [=consent=] is directly attached to an interaction (eg. terms specifed on a
+          form upon submission).
+        </p>
       </section>
     </section>
     <section id="collective">
