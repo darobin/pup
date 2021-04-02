@@ -45,6 +45,12 @@
             href: 'https://wiki.mozilla.org/Security/Anti_tracking_policy#Tracking_Definition',
             publisher: 'Mozilla',
           },
+          'BIG-DATA-COMPETITION': {
+            title: 'Big Data and Competition Policy',
+            href: 'https://global.oup.com/academic/product/big-data-and-competition-policy-9780198788140?lang=en&cc=us',
+            authors: ['Maurice E. Stucke', 'Allen P. Grunes'],
+            publisher: 'Oxford University Press',
+          },
           'BIT-BY-BIT': {
             title: 'Bit By Bit: Social Research in the Digital Age',
             href: 'https://www.bitbybitbook.com/',
@@ -61,6 +67,12 @@
             title: 'Confiding in Con Men: U.S. Privacy Law, the GDPR, and Information Fiduciaries',
             authors: ['Lindsey Barrett'],
             href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3354129',
+          },
+          'DATA-FUTURES-GLOSSARY': {
+            title: ' Data Futures Lab Glossary ',
+            authors: ['Mozilla Insights'],
+            href: 'https://foundation.mozilla.org/en/data-futures-lab/data-for-empowerment/data-futures-lab-glossary/',
+            publisher: 'Mozilla Foundation',
           },
           'DEMOCRATIC-DATA': {
             title: 'Democratic Data: A Relational Theory For Data Governance',
@@ -238,7 +250,7 @@
       <section>
         <h2>People &amp; Data</h2>
         <p>
-          A <dfn>user</dfn> (also <dfn data-lt="persons">person</dfn> or <dfn>data subject</dfn>) is any natural
+          A <dfn>user</dfn> (also <dfn data-lt="individual">person</dfn> or <dfn>data subject</dfn>) is any natural
           person.
         </p>
         <p>
@@ -451,7 +463,7 @@
         </p>
         <p>
           Note that a [=first party=] can be comprised of multiple [=contexts=] if it is large
-          enough that [=persons=] would interact with it for more than one [=purpose=]. [=Sharing=]
+          enough that [=people=] would interact with it for more than one [=purpose=]. [=Sharing=]
           [=personal data=] across [=contexts=] is, in the overwhelming majority of cases,
           [=inappropriate=].
         </p>
@@ -758,6 +770,11 @@
     </section>
     <section id="collective">
       <h2>Collective Issues in Privacy</h2>
+      <div class="issue">
+        <p>
+          Some of this section still needs some conceptual work to render it a fair bit crisper.
+        </p>
+      </div>
       <p>
         When designing Web technology, we naturally pay attention to potential impacts on the [=person=]
         using the Web through their [=user agent=]. In addition to potential individual harms we also
@@ -784,7 +801,7 @@
         and the entities that invite that disclosure [[?RELATIONAL-TURN]], but also between the people
         who expose themselves and those who do not but may find themselves recognised as such indirectly
         anyway. One key understanding here is that such relations may persists even when data is
-        [=permanently deidentified=].
+        [=permanently de-identified=].
       </p>
       <p>
         [=Legibility=] practices can be <dfn>legitimate</dfn> or <dfn>illegitimate</dfn> depending
@@ -795,7 +812,6 @@
         the [=purpose=] of enforcing the rules of the road. It would be [=illegitimate=] to observe
         the same license plates near places of worship to build a database of religious identity.
       </p>
-      <!-- XXX: this part needs some greater clarity and more work -->
       <p>
         [=Legibility=] is often used to order information about the world. This can notably create
         problems of [=reflexivity=] and of [=autonomy=].
@@ -816,22 +832,42 @@
         and tend to be [=legitimate=]. When it is done in the [=user=]'s stead and without governance,
         it decreases [=user=] [=autonomy=] and tends to be [=illegitimate=].
       </p>
+      <p>
+        From an economics standpoint, it is important to note that the broad sharing of data can lead
+        to anticompetitive outcomes, notably due to network effects stemming from processing data across
+        multiple [=contexts=] [[?BIG-DATA-COMPETITION]]. Restricting flows of [=data=] between
+        different [=contexts=] (and not just [=parties=]) is therefore likely to improve competition.
+      </p>
+      <p>
+        <dfn data-lt="governance">Data governance</dfn> refers to the rules and processes for how [=data=] is
+        [=processed=] in any given [=context=]. How data is <em>governed</em> describes who has
+        power to make decisions over [=data=] and how [[?DATA-FUTURES-GLOSSARY]].
+      </p>
+      <!-- XXX: When ready, mention Garuda here -->
+      <p>
+        Collective issues in [=data=] require collective solutions. The proper goal of [=data governance=]
+        at the standards-setting level is the development of structural controls in [=user agents=]
+        and the provision of institutions that can handle population-level problems in [=data=].
+        [=Governance=] might not necessarily achieve its goals by increasing individual control over
+        [=data=].
+      </p>
+      <p>
+        Collecting data at large scales can have significant pro-social outcomes. Problems tend to
+        emerge when entities take part in dual-use collection in which [=data=] is [=processed=]
+        for collective benefit but also for [=self-dealing=] [=purposes=] that may degrade welfare.
+        The [=self-dealing=] [=purposes=] will be justified as bankrolling the pro-social outcomes,
+        which, absent collective oversight, cannot be considered to support claims to [=legitimacy=]
+        for such [=legibility=]. It is vital for standards-setting organisations to establish not
+        just purely technical devices but techno-social systems that can govern data at scale.
+      </p>
+      <div class="example">
+      </div>
       <!--
-        - data markets, differential valuation, rivalrous + non-exludable
-          - Acquisti 2014
-          - Stucke 2017
-          - Binns 2018
-
-        - Collective issues in data require collective solutions. The proper goal of data governance
-          at the standards-setting level is the provision of institutions that can handle
-          population-level problems in data, and it might not necessarily do so by increasing
-          individual control over data.
-        - mention Garuda as the outline of potential legitimate governance over data
-        - Imagine a case in which collecting browser data can be leveraged to improve both search
-          services (which have a business model) and user security (which generally doesn't). This
-          data could be collected through a data trust under stakeholder governance, search
-          companies paying for access with strong checks and balances, and privacy guarantees, and
-          the funds would be used to support enhanced security for all.
+        Imagine a case in which collecting browser data can be leveraged to improve both search
+        services (which have a business model) and user security (which generally doesn't). This
+        data could be collected through a data trust under stakeholder governance, search
+        companies paying for access with strong checks and balances, and privacy guarantees, and
+        the funds would be used to support enhanced security for all.
       -->
     </section>
   </body>
