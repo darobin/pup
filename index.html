@@ -62,6 +62,12 @@
             authors: ['Lindsey Barrett'],
             href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3354129',
           },
+          'DEMOCRATIC-DATA': {
+            title: 'Democratic Data: A Relational Theory For Data Governance',
+            authors: ['Salomé Viljoen'],
+            href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3727562',
+            publisher: 'Yale Law Journal',
+          },
           'DIGITAL-MARKET-MANIPULATION': {
             title: 'Digital Market Manipulation',
             authors: ['Ryan Calo'],
@@ -147,6 +153,16 @@
             href: 'https://w3cping.github.io/privacy-threat-model/',
             authors: ['Jeffrey Yasskin', 'Tom Lowenthal'],
             publisher: 'W3C PING',
+          },
+          'RELATIONAL-TURN': {
+            title: 'A Relational Turn for Data Protection?',
+            href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3745973&s=09',
+            authors: ['Neil Richards', 'Woodrow Hartzog'],
+          },
+          'SEEING-LIKE-A-STATE': {
+            title: 'Seeing Like a State: How Certain Schemes to Improve the Human Condition Have Failed',
+            href: 'https://bookshop.org/books/seeing-like-a-state-how-certain-schemes-to-improve-the-human-condition-have-failed/9780300246759',
+            authors: ['James C. Scott'],
           },
           'SURVEILLANCE-CAPITALISM': {
             title: 'The Age of Surveillance Capitalism: The Fight for a Human Future at the New Frontier of Power',
@@ -735,7 +751,7 @@
           [=consent=] to specific [=purposes=]). It should be noted that, since a [=global opt-out=]
           signal is reaffirmed automatically with every [=user=] interaction, it will take precedence
           in terms of specificity over any manner of blanket [=consent=] that a site may obtain,
-          unless that [=consent=] is directly attached to an interaction (eg. terms specifed on a
+          unless that [=consent=] is directly attached to an interaction (eg. terms specified on a
           form upon submission).
         </p>
       </section>
@@ -743,30 +759,69 @@
     <section id="collective">
       <h2>Collective Issues in Privacy</h2>
       <p>
-        Tk
+        When designing Web technology, we naturally pay attention to potential impacts on the [=person=]
+        using the Web through their [=user agent=]. In addition to potential individual harms we also
+        pay heed to collective effects that emerge from the accumulation of individual actions as
+        influenced by entities and the structure of technology.
+      </p>
+      <p>
+        Note that in evaluating impact, we deliberately ignore what implementers or specifiers may
+        have intended and only focus on outcomes. This framing is known as <dfn>POSIWID</dfn>, or
+        "<em>the Purpose Of a System Is What It Does</em>".
+      </p>
+      <p>
+        The collective problem of privacy is known as <dfn>legibility</dfn>. [=Legibility=] concerns
+        population-level [=data processing=] that may impact populations or individuals, including in
+        ways that [=people=] could not control even under the optimistic assumptions of the [=FIPs=].
+        For example, based on population-level analysis a company may know that page <var>A</var>
+        is predominantly visited by [=people=] of a given race or gender, and decide not to run its
+        job ads there. Visitors to that page are implicitly having their [=data=] processed in
+        [=inappropriate=] ways, with no way to discover the discrimination or seek relief
+        [[?DEMOCRATIC-DATA]].
+      </p>
+      <p>
+        What we consider is therefore not just the relation between the people who expose themselves
+        and the entities that invite that disclosure [[?RELATIONAL-TURN]], but also between the people
+        who expose themselves and those who do not but may find themselves recognised as such indirectly
+        anyway. One key understanding here is that such relations may persists even when data is
+        [=permanently deidentified=].
+      </p>
+      <p>
+        [=Legibility=] practices can be <dfn>legitimate</dfn> or <dfn>illegitimate</dfn> depending
+        on the [=context=] and on the [=norms=] that apply in that [=context=]. Typically, a
+        [=legibility=] practice may be [=legitimate=] if it is managed through an acceptable process
+        of collective governance. For example, it is often considered [=legitimate=] for a
+        government, under the control of its citizens, to maintain a database of license plates for
+        the [=purpose=] of enforcing the rules of the road. It would be [=illegitimate=] to observe
+        the same license plates near places of worship to build a database of religious identity.
+      </p>
+      <!-- XXX: this part needs some greater clarity and more work -->
+      <p>
+        [=Legibility=] is often used to order information about the world. This can notably create
+        problems of [=reflexivity=] and of [=autonomy=].
+      </p>
+      <p>
+        Problems of <dfn>reflexivity</dfn> occur when the entity producing [=legibility=] interacts
+        with [=people=] in ways that reflect the framing that drives that [=legibility=] back at these
+        [=users=], and in that influences them in ways that will feed back into the [=legibility=]
+        system. Such self-reinforcing loops can have deleterious effects both individual and
+        collective [[?SEEING-LIKE-A-STATE]].
+      </p>
+      <!-- XXX: "To govern is to make believe." —Machiavelli -->
+      <p>
+        Issues of [=autonomy=] occur depending on the manner in which [=legibility=] is implemented.
+        When [=legibility=] is used to order the world following rules set by the [=user=] or
+        following methods subject to public scrutiny and governance models with strong checks and
+        balances (such as a newspaper's editorial decisions), then it will enhance [=user=] [=autonomy=]
+        and tend to be [=legitimate=]. When it is done in the [=user=]'s stead and without governance,
+        it decreases [=user=] [=autonomy=] and tends to be [=illegitimate=].
       </p>
       <!--
-        - legibility
-        - data protection is all about the data, maybe it should be more about the people [[REL-TURN]]
-        - the FIPs were designed for an area of databases, not for the data market and the data
-          industrial complex. Individual privacy harms exist [[CITRON-SOLOVE]] but the collective
-          aspects need focus too.
-        - data can be used to decide what we see and what we prefer
-          - "To govern is to make believe." —Machiavelli
-        - second-wave colonisation: extractive practices with respect to countries that do not have
-          significant data industrial presence
         - data markets, differential valuation, rivalrous + non-exludable
           - Acquisti 2014
           - Stucke 2017
           - Binns 2018
 
-        - The "relational turn" considers the relation between the people who expose themselves and
-          the entities that invite that disclosure. It's about power. One key understanding here is
-          that, unlike traditional data protection, this relation persists even when data is
-          anonymised since power can stem from an excessive, asymmetric understanding of cohorts.
-          This is why data derived from individual data must itself be governed in some cases
-          (which we need to define), even if deidentified. What makes an understanding excessive?
-          That is a question for agency that might not entirely fit here.
         - Collective issues in data require collective solutions. The proper goal of data governance
           at the standards-setting level is the provision of institutions that can handle
           population-level problems in data, and it might not necessarily do so by increasing
