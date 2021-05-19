@@ -143,6 +143,12 @@
             authors: ['Danielle Keats Citron', 'Daniel J. Solove'],
             href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3782222',
           },
+          'PRIVACY-AS-CI': {
+            title: 'Privacy As Contextual Integrity',
+            authors: ['Helen Nissenbaum'],
+            href: 'https://digitalcommons.law.uw.edu/wlr/vol79/iss1/10/',
+            publisher: 'Washington Law Review',
+          },
           'PRIVACY-IN-CONTEXT': {
             title: 'Privacy in Context',
             authors: ['Helen Nissenbaum'],
@@ -221,14 +227,13 @@
       XXX:
       - Add the difference between granularity of the means vs purpose (from Fid)
       - add fid, both as ref and content
-      - review from CI article and define context
-      - take content from Privately Yours
       - review collective section, remove parts about search
       - include Mittelstadt
       - Hartzog on FIPs
       For a future iteration
       - definitions around inferred and derived data that can be useful in some contexts
         https://twitter.com/robinberjon/status/1378732256353779712?s=09
+      - take content from Privately Yours
     -->
     <section>
       <h2>Introduction</h2>
@@ -437,7 +442,7 @@
           planned outcome of this [=processing=] which is achieved or aimed for within a given
           [=context=]. A [=purpose=], when described, should be specific enough to be actionable by
           someone familiar with the relevant [=context=] (ie. they could independently determine
-          [=means=] that reasonably correspond to those being effectively deployed).
+          [=means=] that reasonably correspond to an implementation of the [=purpose=]).
         </p>
         <!--
           XXX given that contexts are defined from *user* purpose we might wish to have purpose in
@@ -478,6 +483,9 @@
           (if the norms are adhered to) or <dfn data-lt="inappropriately">inappropriate</dfn>
           (when the norms are violated). A norm violation can be for instance the exfiltration of
           [=personal data=] from a context or the lack of respect for [=transmission principles=].
+          When [=norms=] are respected in a given [=context=], we can say that <dfn>contextual
+          integrity</dfn> is maintained; otherwise that it is violated ([[?PRIVACY-IN-CONTEXT]],
+          [[?PRIVACY-AS-CI]]).
         </p>
         <p>
           We define <dfn>privacy</dfn> as a right to [=appropriate=] [=data processing=]. A
