@@ -91,6 +91,11 @@
             authors: ['European Commission'],
             href: 'https://ec.europa.eu/COMMFrontOffice/publicopinion/index.cfm/Survey/getSurveyDetail/instruments/FLASH/surveyKy/2124',
           },
+          'FIDUCIARY-UA': {
+            title: 'The Fiduciary Duties of User Agents',
+            href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3827421',
+            authors: ['Robin Berjon'],
+          },
           'FIP': {
             title: 'Fair Information Practices: A Basic History',
             href: 'http://bobgellman.com/rg-docs/rg-FIPShistory.pdf',
@@ -226,7 +231,6 @@
     <!--
       XXX:
       - Add the difference between granularity of the means vs purpose (from Fid)
-      - add fid, both as ref and content
       - review collective section, remove parts about search
       - include Mittelstadt
       - Hartzog on FIPs
@@ -528,11 +532,11 @@
           <dfn data-lt="fiduciary relationship">relationship of fiduciary agency</dfn>: it always puts
           the [=user=]'s interest first, up to and including, on occasion, protecting the [=user=]
           from themselves by preventing them from carrying out a harmful decision, or at the very
-          least by speed-bumping it. For example, the [=user agent=] will make it difficult for the
-          [=user=] to connect to a site the authenticity of which is hard to ascertain, will double-check that
-          the user really intends to expose a sensitive device capability, or will prevent the
-          [=user=] from consenting to permanent monitoring of their behaviour. Its <dfn>fiduciary
-          duties</dfn> include [[TAKING-TRUST-SERIOUSLY]]:
+          least by speed-bumping it [[?FIDUCIARY-UA]]. For example, the [=user agent=] will make it
+          difficult for the [=user=] to connect to a site the authenticity of which is hard to
+          ascertain, will double-check that the user really intends to expose a sensitive device
+          capability, or will prevent the [=user=] from consenting to permanent monitoring of their
+          behaviour. Its <dfn>fiduciary duties</dfn> include [[?TAKING-TRUST-SERIOUSLY]]:
         </p>
         <dl>
           <dt><dfn>Duty of Protection</dfn></dt>
@@ -565,9 +569,10 @@
           <dd>
             Because of the special [=fiduciary relationship=] that obtains between [=user=] and
             [=user agent=], the latter is held to be loyal to the former in all situations, up to and
-            including in preference to the [=user agent=] implementer. When a [=user agent=] carries
+            including in preference to the [=user agent=]'s implementer. When a [=user agent=] carries
             out [=processing=] that is not directly in the [=user=]'s interest but rather benefits
-            another entity such as its implementer, that behaviour is known as <dfn>self-dealing</dfn>.
+            another entity such as its implementer, including by piggybacking on [=processing=] that
+            may be in the user's interest, that behaviour is known as <dfn>self-dealing</dfn>.
             [=Self-dealing=] is always [=inappropriate=]. Loyalty is the avoidance of [=self-dealing=].
           </dd>
         </dl>
@@ -593,7 +598,7 @@
           situations.
         </p>
         <p>
-          This section provides some building blocks for the creation of <dfn>privacy threat models</dfn> on
+          This document provides building blocks for the creation of <dfn>privacy threat models</dfn> on
           the Web. Note that privacy threat models have an important difference with security threat
           models in that <em>all</em> [=parties=] are potential threats, even when they are not rogue.
           In fact the [=first party=] is typically considered to be the primary threat, the one
@@ -606,9 +611,10 @@
           obtain in a given [=context=]. Based on these expectations, it becomes possible to ask
           questions about the ways in which they could fail and how to prevent. What happens if the
           [=subject=] is a [=vulnerable person=]? How well does the context fare if expectations of
-          consent are undermined by manipulative techniques [[?DIGITAL-MARKET-MANIPULATION]]?
-          If the [=transmission principles=] are based on sharing data with parties while telling
-          them that they cannot use it, what confidence do we have that they are following the rules?
+          consent are undermined by manipulative techniques ([[?DIGITAL-MARKET-MANIPULATION]],
+          [[?PRIVACY-BEHAVIOR]])? If the [=transmission principles=] are based on sharing data with
+          parties while telling them that they cannot use it, what confidence do we have that they
+          are following the rules?
         </p>
         <p>
           When assessing privacy threats, it is not necessary to establish harms since breaking the
