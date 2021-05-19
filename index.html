@@ -219,8 +219,6 @@
     <section id="sotd"></section>
     <!--
       XXX:
-      - make sure it is clear that we cannot make a blanket statement that 1P is good and 3P is bad.
-        1P can be bad in many ways, 3P can be made good (though it's harder).
       - Add the difference between granularity of the means vs purpose (from Fid)
       - add fid, both as ref and content
       - review from CI article and define context
@@ -269,8 +267,8 @@
       <h2>Definitions</h2>
       <p>
         This section provides a number of elementary building blocks from which to establish a
-        shared understanding of privacy. A significant portion of the definitions below build atop
-        the discontinued work in <em>Tracking Preference Expression (DNT)</em> [[tracking-dnt]].
+        shared understanding of privacy. Some of the definitions below build atop the work in
+        <em>Tracking Preference Expression (DNT)</em> [[tracking-dnt]].
       </p>
       <section>
         <h2>People &amp; Data</h2>
@@ -311,7 +309,7 @@
           <a href="#collective">Collective Issues in Privacy</a> section.
         </p>
         <p>
-          Data is <dfn>pseudonymous</dfn> when:
+          Data is <dfn data-lt="pseudonymous data|pseudonymity">pseudonymous</dfn> when:
         </p>
         <ul>
           <li>
@@ -321,15 +319,15 @@
           <li>
             when these identifiers are shared with a [=third party=], they are made unique to that
             [=third party=] such that if they are shared with more than one [=third party=] these
-            cannot then match them up; and
+            cannot then match them up with one another; and
           </li>
           <li>
             there is a strong level of confidence that no [=third party=] can match them to any data
             other than that obtained through interactions with the [=first party=]; and
           </li>
           <li>
-            any [=third party=] receiving such identifiers is barred from sharing them or the
-            related data further; and
+            any [=third party=] receiving such identifiers is barred (eg. based on legal terms) from
+            sharing them or the related data further; and
           </li>
           <li>
             technical measures exist to prevent re-identification or the joining of different data
@@ -341,9 +339,10 @@
           </li>
         </ul>
         <p>
-          This can ensure that [=pseudonymous=] is used in a manner consistent with sufficient
-          governance over the data such that technical and procedural means to guarantee the
-          maintenance of pseudonymity are preserved.
+          This can ensure that [=pseudonymous data=] is used in a manner that provides a minimum
+          degree of governance such that technical and procedural means to guarantee the
+          maintenance of pseudonymity are preserved. Note that [=pseudonymity=], on its own, is not
+          sufficient to render [=data processing=] [=appropriate=].
         </p>
         <p>
           A <dfn data-lt="vulnerable">vulnerable person</dfn> is a [=person=] who, at least in the [=context=] of
@@ -403,13 +402,17 @@
           </li>
         </ul>
         <p>
-          A <dfn>data controller</dfn> is an entity that determines the [=means=] and [=purposes=]
-          of data processing. Any party that is not a [=service provider=] is a [=data controller=].
+          A <dfn>data controller</dfn> is a [=party=] that determines the [=means=] and [=purposes=]
+          of data processing. Any [=party=] that is not a [=service provider=] is a [=data controller=].
         </p>
         <p>
           The <dfn>Vegas Rule</dfn> is a simple implementation of privacy in which "<em>what happens
           with the [=first party=] stays with the [=first party=]</em>." Put differently, it
-          describes a situation in which the [=first party=] is the only [=data controller=].
+          describes a situation in which the [=first party=] is the only [=data controller=]. Note
+          that, while enforcing the [=Vegas Rule=] provides a rule of thumb describing a necessary
+          baseline for [=appropriate=] [=data processing=], it is not always sufficient to guarantee
+          [=appropriate=] [=processing=] since the [=first party=] can [=process=] data
+          [=inappropriately=].
         </p>
       </section>
       <section>
