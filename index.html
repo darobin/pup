@@ -247,14 +247,15 @@
     <section id="sotd"></section>
     <!--
       XXX:
-      - Add the difference between granularity of the means vs purpose (from Fid)
-      - review collective section, remove parts about search
-      - include Mittelstadt
-      - Hartzog on FIPs
       For a future iteration
       - definitions around inferred and derived data that can be useful in some contexts
         https://twitter.com/robinberjon/status/1378732256353779712?s=09
       - take content from Privately Yours
+      - Add the difference between granularity of the means vs purpose (from Fid)
+      - economics considerations?
+      - Garuda
+      - include Mittelstadt
+      - Hartzog on FIPs
     -->
     <section>
       <h2>Introduction</h2>
@@ -781,7 +782,7 @@
             should also be defined differently for certain kinds of [=contexts=]. The legitimate
             [=processing=] that can take place in this tier derives its legitimacy from matching the
             expectations and interests of both the [=user=] and the [=first party=] in their
-            relationship, as guided by the applicable [=norms=]. This tier is more [=legitimate=] the more the
+            relationship, as guided by the applicable [=norms=]. This tier is more [=appropriate=] the more the
             [=first party=] acts in accordance with [=fiduciary duties=].
           </dd>
           <dt><dfn>Opt-out Privacy Tier</dfn></dt>
@@ -832,11 +833,6 @@
     </section>
     <section id="collective">
       <h2>Collective Issues in Privacy</h2>
-      <div class="issue">
-        <p>
-          Some of this section still needs some conceptual work to render it a fair bit crisper.
-        </p>
-      </div>
       <p>
         When designing Web technology, we naturally pay attention to potential impacts on the [=person=]
         using the Web through their [=user agent=]. In addition to potential individual harms we also
@@ -845,14 +841,14 @@
       </p>
       <p>
         Note that in evaluating impact, we deliberately ignore what implementers or specifiers may
-        have intended and only focus on outcomes. This framing is known as <dfn>POSIWID</dfn>, or
+        have <em>intended</em> and only focus on outcomes. This framing is known as <dfn>POSIWID</dfn>, or
         "<em>the Purpose Of a System Is What It Does</em>".
       </p>
       <p>
         The collective problem of privacy is known as <dfn>legibility</dfn>. [=Legibility=] concerns
         population-level [=data processing=] that may impact populations or individuals, including in
         ways that [=people=] could not control even under the optimistic assumptions of the [=FIPs=].
-        For example, based on population-level analysis a company may know that page <var>A</var>
+        For example, based on population-level analysis, a company may know that <var>site.example</var>
         is predominantly visited by [=people=] of a given race or gender, and decide not to run its
         job ads there. Visitors to that page are implicitly having their [=data=] processed in
         [=inappropriate=] ways, with no way to discover the discrimination or seek relief
@@ -870,7 +866,7 @@
         <dfn data-lt="illegitimacy">illegitimate</dfn> depending
         on the [=context=] and on the [=norms=] that apply in that [=context=]. Typically, a
         [=legibility=] practice may be [=legitimate=] if it is managed through an acceptable process
-        of collective governance. For example, it is often considered [=legitimate=] for a
+        of collective [=governance=]. For example, it is often considered [=legitimate=] for a
         government, under the control of its citizens, to maintain a database of license plates for
         the [=purpose=] of enforcing the rules of the road. It would be [=illegitimate=] to observe
         the same license plates near places of worship to build a database of religious identity.
@@ -880,39 +876,39 @@
         problems of [=reflexivity=] and of [=autonomy=].
       </p>
       <p>
-        Problems of <dfn>reflexivity</dfn> occur when the entity producing [=legibility=] interacts
-        with [=people=] in ways that reflect the framing that drives that [=legibility=] back at these
-        [=users=], and in that influences them in ways that will feed back into the [=legibility=]
-        system. Such self-reinforcing loops can have deleterious effects both individual and
+        Problems of <dfn>reflexivity</dfn> occur when the ordering of information about the world
+        used to produce [=legibility=] finds itself changing the way in which the world operates.
+        This can produce self-reinforcing loops that can have deleterious effects both individual and
         collective [[?SEEING-LIKE-A-STATE]].
       </p>
-      <!-- XXX: "To govern is to make believe." —Machiavelli -->
       <p>
         Issues of [=autonomy=] occur depending on the manner in which [=legibility=] is implemented.
         When [=legibility=] is used to order the world following rules set by the [=user=] or
-        following methods subject to public scrutiny and governance models with strong checks and
+        following methods subject to public scrutiny and [=governance=] models with strong checks and
         balances (such as a newspaper's editorial decisions), then it will enhance [=user=] [=autonomy=]
-        and tend to be [=legitimate=]. When it is done in the [=user=]'s stead and without governance,
+        and tend to be [=legitimate=]. When it is done in the [=user=]'s stead and without [=governance=],
         it decreases [=user=] [=autonomy=] and tends to be [=illegitimate=].
       </p>
+      <!--
       <p>
         From an economics standpoint, it is important to note that the broad sharing of data can lead
         to anticompetitive outcomes, notably due to network effects stemming from processing data across
         multiple [=contexts=] [[?BIG-DATA-COMPETITION]]. Restricting flows of [=data=] between
         different [=contexts=] (and not just [=parties=]) is therefore likely to improve competition.
       </p>
+      -->
       <p>
         <dfn data-lt="governance">Data governance</dfn> refers to the rules and processes for how [=data=] is
         [=processed=] in any given [=context=]. How data is <em>governed</em> describes who has
         power to make decisions over [=data=] and how [[?DATA-FUTURES-GLOSSARY]].
       </p>
-      <!-- XXX: When ready, mention Garuda here -->
       <p>
-        Collective issues in [=data=] require collective solutions. The proper goal of [=data governance=]
-        at the standards-setting level is the development of structural controls in [=user agents=]
-        and the provision of institutions that can handle population-level problems in [=data=].
-        [=Governance=] might not necessarily achieve its goals by increasing individual control over
-        [=data=].
+        In general, collective issues in [=data=] require collective solutions. The proper goal of
+        [=data governance=] at the standards-setting level is the development of structural controls
+        in [=user agents=] and the provision of institutions that can handle population-level problems
+        in [=data=]. [=Governance=] will often struggle to achieve its goals if it works primarily by
+        increasing <em>individual</em> control over [=data=]. A collective approach reduces the cost of
+        control.
       </p>
       <p>
         Collecting data at large scales can have significant pro-social outcomes. Problems tend to
