@@ -68,8 +68,25 @@
             authors: ['Lindsey Barrett'],
             href: 'https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3354129',
           },
+          'CONSENT-LACKEYS': {
+            title: 'Publishers tell Google: We\'re not your consent lackeys',
+            authors: ['Rebecca Hill'],
+            href: 'https://www.theregister.com/2018/05/01/publishers_slam_google_ad_policy_gdpr_consent/',
+            publisher: 'The Register',
+          },
+          'DARK-PATTERNS': {
+            title: 'Dark patterns: past, present, and future',
+            authors: ['Arvind Narayanan', 'Arunesh Mathur', 'Marshini Chetty', 'Mihir Kshirsagar'],
+            href: 'https://dl.acm.org/doi/10.1145/3397884',
+            publisher: 'ACM',
+          },
+          'DARK-PATTERN-DARK': {
+            title: 'What Makes a Dark Pattern… Dark? Design Attributes, Normative Considerations, and Measurement Methods',
+            authors: ['Arunesh Mathur', 'Jonathan Mayer', 'Mihir Kshirsagar'],
+            href: 'https://arxiv.org/abs/2101.04843v1',
+          },
           'DATA-FUTURES-GLOSSARY': {
-            title: ' Data Futures Lab Glossary ',
+            title: 'Data Futures Lab Glossary',
             authors: ['Mozilla Insights'],
             href: 'https://foundation.mozilla.org/en/data-futures-lab/data-for-empowerment/data-futures-lab-glossary/',
             publisher: 'Mozilla Foundation',
@@ -635,7 +652,7 @@
           A [=person=]'s characteristics, and therefore [=identity=], is entirely
           [=context=]-dependent. Recognising a [=person=] in distinct [=contexts=] can at times be
           [=appropriate=] but this relies on an understanding of applicable [=norms=] and will
-          likely require comportmentalisation. (For example, if you meet your therapist at a
+          likely require compartmentalisation. (For example, if you meet your therapist at a
           cocktail party, you expect them to have rather different discussion topics with you than
           they usually would, and possibly even to pretend they do not know you.) As a result,
           automating the recognition of a [=person=]'s identity across different [=contexts=] is
@@ -645,7 +662,8 @@
         <p>
           [=Identity=] being by nature fragmented, [=user agents=] must work in support of [=users=]
           having different identities in different [=context=] with respect to <em>all</em> [=parties=]
-          and to prevent their recognition through other means, where possible.
+          (including the user agent vendor) and to prevent their recognition through other means,
+          where possible.
         </p>
         <p>
           A keystone principle of the Web is trust [[RFC8890]]. An important part of trust is to
@@ -667,19 +685,21 @@
         time with which to weigh decisions, and by necessity rely on shortcuts when making
         decisions. This makes their privacy preferences malleable [[?PRIVACY-BEHAVIOR]] and susceptible to
         manipulation [[?DIGITAL-MARKET-MANIPULATION]]. A [=person=]'s [=autonomy=] is enhanced by a
-        system or device when it offers a shortcut that aligns more with what that [=person=] would
-        have decided given arbitrary amounts of time and relatively unfettered intellectual ability
-        and decreased when the shortcut moves in the opposite decision.
+        system or device when that system offers a shortcut that aligns more with what that [=person=] would
+        have decided given arbitrary amounts of time and relatively unfettered intellectual ability;
+        and [=autonomy=] is decreased when a similar shortcut goes against decisions made under
+        ideal conditions.
       </p>
       <p>
         Affordances and interactions that decrease [=autonomy=] are known as <dfn>dark patterns</dfn>.
         A [=dark pattern=] does not have to be intentional, the deceptive effect is sufficient to
-        define them. <!-- XXX: include CITP work ref, maybe others -->
+        define them [[?DARK-PATTERNS]], [[?DARK-PATTERN-DARK]].
       </p>
       <p>
         Because we are all subject to motivated reasoning, the design of defaults and affordances
         that may impact [=user=] [=autonomy=] should be the subject of independent scrutiny.
-        Readers are enjoined to be particularly cautious to avoid slipping into [=data paternalism=].
+        Implementers are enjoined to be particularly cautious to avoid slipping into
+        [=data paternalism=].
       </p>
       <p>
         Given the sheer volume of potential [=data=]-related decisions in today's data economy,
@@ -692,11 +712,11 @@
         In the 1970s, the <dfn>Fair Information Practices</dfn> or <dfn>FIPs</dfn> were elaborated
         in support of individual [=autonomy=] in the face of growing concerns with databases. The
         [=FIPs=] assume that there is sufficiently little [=data processing=] taking place that any
-        [=person=] will be able to carry out sufficient diligence to enable [=autonomous=]
-        decision-making by the [=data subject=]. Since they entirely offload the [=privacy labour=]
+        [=person=] will be able to carry out sufficient diligence to enable [=autonomy=] in their
+        decision-making. Since they entirely offload the [=privacy labour=]
         to [=users=] and assume perfect, unfettered [=autonomy=], the [=FIPs=] do not forbid specific
-        types of [=data processing=], they only place them under different procedural requirements.
-        This is [=appropriate=] for [=parties=] that are processing data in the 1970s.
+        types of [=data processing=] but only place them under different procedural requirements.
+        Such an approach is [=appropriate=] for [=parties=] that are processing data in the 1970s.
       </p>
       <p>
         One notable issue with procedural approaches to privacy is that they tend to have the same
@@ -706,18 +726,18 @@
         footing, or even where the [=user=] may have greater power, as is the case with small
         businesses operating in a competitive environment. It further does not consider cases in
         which one [=party=] may coerce other [=parties=] into facilitating its [=inappropriate=]
-        practices, as is often the case with dominant players in advertising or in content
-        aggregation [[?CAT]].
+        practices, as is often the case with dominant players in advertising [[?CONSENT-LACKEYS]] or
+        in content aggregation [[?CAT]].
       </p>
       <p>
         Reference to the [=FIPs=] survives to this day. They are often referenced as <em>transparency
         and choice</em>, which, in today's digital environment, is often a strong indication that
-        [=inappropriate=] [=processing=] is being described
+        [=inappropriate=] [=processing=] is being described.
       </p>
       <figure>
         <img src="agnes-tc.jpg" alt="Agnes from Wandavision winking 'Transparency and choice'">
         <figcaption>
-          A method of privacy regulation which promises honesty and autonomy but delivers neither
+          A method of privacy regulation which promises honesty and autonomy but delivers neither.
           [[?CONFIDING]].
         </figcaption>
       </figure>
